@@ -20,10 +20,40 @@ const apiLoading = (state = false, action) => {
   }
 }
 
+const products = (state = [], action) => {
+  switch (action.type) {
+    case 'API_SUCCESS':
+      return action.products
+    default:
+      return state
+  }
+}
+
+const routeId = (state = 1, action) => {
+  switch (action.type) {
+    case 'SELECTED_ROUTE':
+      return action.id
+    default:
+      return state
+  }
+}
+
+const userData = (state = [], action) => {
+  switch (action.type) {
+    case 'USER_DATA':
+      return action.data
+    default:
+      return state
+  }
+}
+
 
 
 
 export default combineReducers({
   apiError,
-  apiLoading
+  apiLoading,
+  products,
+  routeId,
+  userData
 })
