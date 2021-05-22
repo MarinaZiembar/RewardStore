@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import ProductsList from '../components/ProductsList';
-import { getProducts, getUserHistory } from '../actions/index';
+import { getProducts, getUserHistory, getUserData, redeemProduct } from '../actions/index';
 
 
 const mapStateToProps = (state, ownProps) => ({
     products: state.products,
     routeId: state.routeId,
+    userData: state.userData,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onGetProducts: () => dispatch(getProducts()),
     onGetUserHistory: () => dispatch(getUserHistory()),
+    onGetUserData: () => dispatch(getUserData()),
+    onRedeemProduct: (id) => dispatch(redeemProduct(id))
   })
 
 export default connect(

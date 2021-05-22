@@ -27,16 +27,14 @@ function App() {
 
             <Col>
               <Switch>
-                {
-                  routes.map((route,i) => (
-                    <Route
-                      key={i}
-                      path={route.path}
-                      component={route.component}
-                    />
-                  ))
-                }
-              </Switch>
+              {routes.map((route,i) => (
+                (<Route
+                  key={i}
+                  exact path={route.path}
+                  component={route.component}
+                />)
+              ))}
+            </Switch>
             </Col>
           </Row>
 

@@ -31,12 +31,31 @@ export const selectedRoute = id => (
 )
 
 
-export const userData = data => (
+export const userDataSuccess = data => (
     {
         type: 'USER_DATA',
         data
     }
 )
+
+
+export const addPointsSuccess = timeStamp =>(
+    {
+        type:'ADD_POINTS',
+        added:timeStamp
+    }
+)
+
+export const redeemProductSuccess = timeStamp =>(
+    {
+        type:'REDEEM_PRODUCT',
+        redeemed:timeStamp
+    }
+)
+
+
+
+
 
 
   
@@ -127,14 +146,73 @@ export const getUserData = () => {
             return response
         })
         .then((response) => response.json())
-
-        .then((data) => dispatch(userData(data)))
-
+        .then((data) => dispatch(userDataSuccess(data)))
         .catch((error) => {
             dispatch(apiError(true));
         } )
     }
 }
+
+
+export const addPoints = (points) => {
+    return dispatch => {
+
+        dispatch(apiError(false))
+
+        dispatch(apiLoading(true))
+
+        fetch(`${apiUrl}/user/points`, {
+            headers:headers,
+            method:"post",
+            body:JSON.stringify({amount:parseInt(points)}),
+        })
+        .then((response) => {
+            if (!response.ok) {
+            throw Error(response.statusText)
+            }
+
+            dispatch(apiLoading(false))
+            dispatch(addPointsSuccess(new Date()))
+
+            return response
+        })
+        .then((response) => response.body)
+        .catch((error) => {
+            dispatch(apiError(true));
+        } )
+    }
+}
+
+export const redeemProduct = (id) => {
+    return dispatch => {
+
+        dispatch(apiError(false))
+
+        dispatch(apiLoading(true))
+
+        fetch(`${apiUrl}/redeem`, {
+            headers:headers,
+            method:"post",
+            body:JSON.stringify({productId:id}),
+        })
+        .then((response) => {
+            if (!response.ok) {
+            throw Error(response.statusText)
+            }
+
+            dispatch(apiLoading(false))
+            dispatch(redeemProductSuccess(new Date()))
+
+            return response
+        })
+        .then((response) => response.body)
+        .catch((error) => {
+            dispatch(apiError(true));
+        } )
+    }
+}
+
+
 
 
 

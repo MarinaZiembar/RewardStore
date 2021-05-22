@@ -47,6 +47,23 @@ const userData = (state = [], action) => {
   }
 }
 
+const addPoints = (state = false, action) => {
+  switch (action.type) {
+    case 'ADD_POINTS':
+      return action.added
+    default:
+      return state
+  }
+}
+
+const redeemProduct = (state = false, action) => {
+  switch (action.type) {
+    case 'REDEEM_PRODUCT':
+      return action.redeemed
+    default:
+      return state
+  }
+}
 
 
 
@@ -55,5 +72,7 @@ export default combineReducers({
   apiLoading,
   products,
   routeId,
-  userData
+  userData,
+  addPoints,
+  redeemProduct
 })
