@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import ProductCard from './ProductCard';
-import HistoryProductCard from './HistoryProductCard';
+import ProductCard from './cards/ProductCard';
+import HistoryProductCard from './cards/HistoryProductCard';
 
 
 function ProductsList( { onGetProducts, onGetUserHistory, products, routeId, userData, onRedeemProduct } ) {

@@ -1,15 +1,11 @@
-import React, {useEffect} from 'react';
-import {Link} from 'react-router-dom';
-import {routes} from '../utils/Routes';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import cog from '../assets/images/cog.svg';
+import { routes } from '../utils/Routes';
 
 
-function Menu( { onGetRouteId, onGetUserData, addedPoints, userData, redeemProduct } ) {
 
-    useEffect(() => {
-
-        onGetUserData();
-
-    }, [addedPoints, redeemProduct])
+function Menu({onGetRouteId}) {
 
     return(
         <div className="menu">
@@ -20,14 +16,11 @@ function Menu( { onGetRouteId, onGetUserData, addedPoints, userData, redeemProdu
                         key={i}
                         onClick={() => onGetRouteId(route.page_id)}
                     >
-                        {route.label}
+                        <img src={route.label} width="30" alt="icon" />
                     </Link>    
                 ))
             }
-
-            <h5> {userData.name} </h5>
-            <p> {userData.points} </p>
-
+            <button><img src={cog} width="30" alt="cog" /></button>
         </div>
     )
 }

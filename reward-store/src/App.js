@@ -1,7 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {Container, Row, Col} from 'react-bootstrap';
-import Header from './components/Header';
+import HeaderContainer from './containers/HeaderContainer';
 import MenuContainer from './containers/MenuContainer';
 import {routes} from './utils/Routes';
 import './assets/styles/App.css';
@@ -12,21 +11,15 @@ function App() {
   return (
       <Router>
 
-        <Container fluid>
+        <div className="App top">
 
-          <Row>
-            <Col>
-              <Header/>
-            </Col>
-          </Row>
+          <HeaderContainer />
 
-          <Row>
-            <Col>
-              <MenuContainer />
-            </Col>
+          <div className="bottom">
 
-            <Col>
-              <Switch>
+            <MenuContainer />
+
+            <Switch>
               {routes.map((route,i) => (
                 (<Route
                   key={i}
@@ -35,10 +28,10 @@ function App() {
                 />)
               ))}
             </Switch>
-            </Col>
-          </Row>
 
-        </Container>
+          </div>
+
+        </div>
 
       </Router>
   )

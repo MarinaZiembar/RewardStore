@@ -1,0 +1,24 @@
+
+
+.menu {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:0px 15px;
+    width:85px;
+    height:91vh;
+}
+
+.menu img{
+    padding:35px 0px;
+    filter: invert(26%) sepia(76%) saturate(4578%) hue-rotate(256deg) brightness(78%) contrast(96%);
+}
+
+.menu button{
+    background:none;
+    border:0px;
+    padding:0px;
+    height:105px;
+    cursor:pointer;
+}

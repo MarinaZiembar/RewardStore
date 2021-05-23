@@ -1,0 +1,50 @@
+
+
+.header{
+    height:9vh;
+}
+
+.header .top{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+}
+
+.header .top .points-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header .top .points-container h3{
+    font-weight:700;
+    font-size:20px;
+    margin-right:10px;
+}
+
+.header .top .points-container aside{
+    text-decoration: none;
+    border-radius:100px;
+    border: 0;
+    background: linear-gradient(90deg, rgba(94,96,206,1) 0%, rgba(116,0,184,1) 100%);
+    color:white;
+    font-weight:700;
+    padding: 12px 20px;
+    font-size:20px;
+    font-family:'Comfortaa', sans-serif;
+    margin:0px 5px;
+    display:flex;
+    align-content:center;
+    justify-content:center;
+}
+
+.header .top .points-container aside p{
+    margin:3px 10px 0px 0px;
+}
+
+.header .top .points-container aside img{
+    filter: invert(91%) sepia(19%) saturate(6486%) hue-rotate(343deg) brightness(101%) contrast(101%);
+}

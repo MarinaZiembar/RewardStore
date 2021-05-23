@@ -1,0 +1,20 @@
+/* Dark Violet: #050831;
+Light Violet: #133072;
+Pink: #e1035a;  */
+
+
+body{
+    font-family: 'Comfortaa', sans-serif;
+    font-weight:500;
+    margin:0px;
+    padding:0px;
+}
+
+.App .bottom{
+    display: flex;
+}
+
+
+@import url('./Menu.css');
+@import url('./Header.css');
+@import url('./Home.css');

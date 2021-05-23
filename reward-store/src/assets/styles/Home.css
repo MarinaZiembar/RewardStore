@@ -1,0 +1,16 @@
+
+.bottom{
+    height: 91vh;
+}
+
+.home, .profile, .wishlist{
+    width:100%;
+    border-top-left-radius: 50px;
+    background-color:#EEE9F6;
+    height: 91vh;
+    overflow-y: scroll;
+}
+
+.home::-webkit-scrollbar, .profile::-webkit-scrollbar, .wishlist::-webkit-scrollbar{
+    display: none;
+}
