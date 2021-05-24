@@ -3,14 +3,116 @@
     height: 91vh;
 }
 
+
 .home, .profile, .wishlist{
     width:100%;
     border-top-left-radius: 50px;
     background-color:#EEE9F6;
     height: 91vh;
     overflow-y: scroll;
+    padding:40px;
 }
 
 .home::-webkit-scrollbar, .profile::-webkit-scrollbar, .wishlist::-webkit-scrollbar{
     display: none;
+}
+
+.home .hero-card, .profile .hero-card, .wishlist .hero-card{
+    background: linear-gradient(90deg, rgba(94,96,206,1) 0%, rgba(78,168,222,1) 50%, rgba(114,239,221,1) 100%);
+    width:100%;
+    color:white;
+    font-weight:700;
+    padding:95px 35px 35px 35px;
+    border-radius:20px;
+}
+
+.home .hero-card h1, .profile .hero-card h1, .wishlist .hero-card h1{   
+    font-size:60px;
+}
+
+.home .products-list{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product-card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:23%;
+    padding:30px;
+    background:white;
+    border-radius:20px;
+    margin:24px 1%;
+}
+
+.product-card img{
+    width:100%;
+}
+
+.product-card .price{
+    display:flex;
+    align-items: center;
+    margin:20px 0px;
+    background: linear-gradient(90deg, rgba(94,96,206,1) 0%, rgba(116,0,184,1) 100%);
+    border-radius:100px;
+    padding:8px 20px;
+    width:fit-content;
+}
+
+
+.product-card .img-coin{
+    width:20px;
+    margin-top:-2px;
+    margin-left:8px;
+}
+
+.product-card button{
+    border:0px;
+    background:linear-gradient(90deg, rgba(78,168,222,1) 0%, rgba(100,223,223,1) 49%, rgba(128,255,219,1) 100%);
+    color:white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius:12px;
+    padding:12px 10px;
+    transition-duration: 0.3s;
+    transition-property: transform filter;
+    transition-timing-function: ease-out;
+}
+
+.product-card button:hover{
+    transform: translateY(-4px);
+}
+
+.product-card button.inactive{
+    border:0px;
+    background:rgba(0,0,0,0.3);
+    color:white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius:12px;
+    padding:12px 10px;
+    cursor:default;
+}
+
+.product-card button.inactive img{
+    width:18px;
+    margin-top:-4px;
+}
+
+.product-card button.inactive:hover{
+    transform: unset;
+}
+
+.product-card h3{
+    font-size:26px;
+    margin-top:25px;
+}
+
+.product-card p{
+    font-size:20px;
+    color:white;
+    margin-bottom:0px;
 }

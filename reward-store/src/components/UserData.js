@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
+import user from '../assets/images/user.svg';
 
 
-function UserData( { userData, routeId, onGetUserData, addedPoints, onAddPoints} ) {
+function UserData( { userData, routeId, onGetUserData, addedPoints} ) {
     
 
     useEffect(() => {
@@ -11,17 +12,19 @@ function UserData( { userData, routeId, onGetUserData, addedPoints, onAddPoints}
     }, [routeId, addedPoints])
 
 
-    const handleOnClick = (value) => {
-        onAddPoints(value);
-    }
 
     return(
         <div className="user-data">
-            <h1> {userData.name} </h1>
-            <p> {userData.points} </p>
-            <button value="1000" onClick={(e) => handleOnClick(e.target.value)}>Agregar 1000</button>
-            <button value="5000" onClick={(e) => handleOnClick(e.target.value)}>Agregar 5000</button>
-            <button value="7500" onClick={(e) => handleOnClick(e.target.value)}>Agregar 7500</button>
+            <div className="user-card">
+                <div className="img-user">
+                    <img src={user} width="80" alt="user-pic"/>
+                </div>
+                <div className="user-info">
+                    <h1> {userData.name} </h1>
+                    <p> <strong>Points: </strong>{userData.points} </p>
+                </div>
+            </div>
+            <h2>History</h2>
         </div>
     )
 }

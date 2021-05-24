@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-import { getRouteId, getUserData } from '../actions/index';
+import { getRouteId, getUserData, addPoints } from '../actions/index';
 
 
 const mapStateToProps = (state, ownProps) => ({
-  addedPoints: state.addedPoints,
+  addedPoints: state.addPoints,
   userData: state.userData,
   redeemProduct: state.redeemProduct,
   products: state.products
@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onGetRouteId: (id) => dispatch(getRouteId(id)),
-    onGetUserData: () => dispatch(getUserData())
+    onGetUserData: () => dispatch(getUserData()),
+    onAddPoints:(value) => dispatch(addPoints(value))
   })
 
 

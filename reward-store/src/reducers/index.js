@@ -47,7 +47,7 @@ const userData = (state = [], action) => {
   }
 }
 
-const addPoints = (state = false, action) => {
+const addPoints = (state = new Date(), action) => {
   switch (action.type) {
     case 'ADD_POINTS':
       return action.added
@@ -56,10 +56,37 @@ const addPoints = (state = false, action) => {
   }
 }
 
-const redeemProduct = (state = false, action) => {
+const redeemProduct = (state = new Date(), action) => {
   switch (action.type) {
     case 'REDEEM_PRODUCT':
       return action.redeemed
+    default:
+      return state
+  }
+}
+
+const redeemProductError = (state = false, action) => {
+  switch (action.type) {
+    case 'REDEEM_ERROR':
+      return action.error
+    default:
+      return state
+  }
+}
+
+const category = (state = "", action) => {
+  switch (action.type) {
+    case 'GET_CATEGORY':
+      return action.category
+    default:
+      return state
+  }
+}
+
+const order = (state = "", action) => {
+  switch (action.type) {
+    case 'GET_ORDER':
+      return action.order
     default:
       return state
   }
@@ -74,5 +101,8 @@ export default combineReducers({
   routeId,
   userData,
   addPoints,
-  redeemProduct
+  redeemProduct,
+  category,
+  order,
+  redeemProductError
 })

@@ -1,7 +1,7 @@
 
 
 .header{
-    height:9vh;
+    height:95px;
 }
 
 .header .top{
@@ -32,14 +32,23 @@
     background: linear-gradient(90deg, rgba(94,96,206,1) 0%, rgba(116,0,184,1) 100%);
     color:white;
     font-weight:700;
-    padding: 12px 20px;
+    padding: 10px 20px;
     font-size:20px;
     font-family:'Comfortaa', sans-serif;
     margin:0px 5px;
     display:flex;
     align-content:center;
     justify-content:center;
+    transition-duration: 0.3s;
+    transition-property: transform filter;
+    transition-timing-function: ease-out;
+    cursor:pointer;
 }
+
+.header .top .points-container aside:hover{
+    transform: translateY(-4px);
+}
+
 
 .header .top .points-container aside p{
     margin:3px 10px 0px 0px;

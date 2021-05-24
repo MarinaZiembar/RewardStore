@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import cog from '../assets/images/cog.svg';
 import { routes } from '../utils/Routes';
 
 
@@ -20,7 +19,6 @@ function Menu({onGetRouteId}) {
                     </Link>    
                 ))
             }
-            <button><img src={cog} width="30" alt="cog" /></button>
         </div>
     )
 }

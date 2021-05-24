@@ -1,8 +1,6 @@
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
-import Wishlist from '../pages/Wishlist';
 import home from '../assets/images/home.svg';
-import heart from '../assets/images/heart.svg';
 import user from '../assets/images/user.svg';
 
 
@@ -19,10 +17,4 @@ export const routes = [
         component: Profile,
         label:user,
     },
-    {
-        page_id:3,
-        path: '/wishlist',
-        component: Wishlist,
-        label:heart,
-    }
 ]

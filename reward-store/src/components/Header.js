@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
+import ModalAddPoints from './modals/ModalAddPoints';
 import logo from '../assets/images/logo.svg';
 import gem from '../assets/images/gem.svg';
 
 
-function Menu( { onGetRouteId, onGetUserData, addedPoints, userData, redeemProduct, products } ) {
+function Header( { onGetUserData, addedPoints, userData, redeemProduct, onAddPoints } ) {
 
     useEffect(() => {
 
@@ -11,25 +12,29 @@ function Menu( { onGetRouteId, onGetUserData, addedPoints, userData, redeemProdu
 
     }, [addedPoints, redeemProduct])
 
-    // const categories = [
-    //     ...new Set(products.map(product => product.category))
-    // ]
+    
+    const [show, setShow] = useState(false);
 
     return(
         <div className="header">
             <div className="top">
-                <img src={logo} width="85" alt="logo" />
+                <img src={logo} width="190" alt="logo" />
                 <div className="points-container">
                     <h3>Ahoy, {userData.name}!</h3>
-                    <aside>
+                    <aside onClick={() => setShow(true)} >
                         <p> {userData.points} </p>
                         <img src={gem} width="25" alt="logo" />
                     </aside>
                 </div>
             </div>
+            <ModalAddPoints 
+                handleOnShow={() => setShow(false)} 
+                handleOnCardClick={(e) => {onAddPoints(e.target.value); setShow(false)}}
+                show={show}
+            />
         </div>
     )
 }
 
 
-export default Menu;
+export default Header;

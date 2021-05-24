@@ -13,12 +13,13 @@
 .menu img{
     padding:35px 0px;
     filter: invert(26%) sepia(76%) saturate(4578%) hue-rotate(256deg) brightness(78%) contrast(96%);
+    transition-duration: 0.3s;
+    transition-property: transform filter;
+    transition-timing-function: ease-out;
 }
 
-.menu button{
-    background:none;
-    border:0px;
-    padding:0px;
-    height:105px;
-    cursor:pointer;
+.menu img:hover{
+    transform: translateY(-6px);
+    filter:invert(26%) sepia(76%) saturate(4578%) hue-rotate(256deg) brightness(100%) contrast(96%);
 }
+

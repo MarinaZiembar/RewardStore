@@ -1,0 +1,71 @@
+.modal-add-points .modal-content{
+    border-radius:20px;
+    border:0px;
+}
+
+.modal-add-points .modal-header{
+    border:0px;
+}
+
+.modal-add-points .modal-body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.modal-add-points .modal-body .cards-container{
+    display:flex;
+    justify-content:center;
+    align-items:center; 
+    margin-top:40px;
+}
+
+.modal-add-points .modal-body .cards-container .add-points-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items: center;
+    text-align:center;
+    height:340px;
+    border-radius:25px;
+    width:100%;
+    padding:30px;
+    color:white;
+    margin:10px;
+    background: linear-gradient(-45deg, rgba(116,0,184,1) 0%, rgba(94,96,206,1) 90%);
+    box-shadow: -2px 6px 29px -13px rgba(0,0,0,0.65);
+}
+
+.modal-add-points .modal-body .cards-container .add-points-card .details{
+    height:150px;
+}
+
+.modal-add-points .modal-body .cards-container .add-points-card button{
+    background-color: white;
+    color:#7400b8;
+    font-weight:800;
+    border:0px;
+    border-radius:8px;
+    text-transform: uppercase;
+    padding:5px 15px;
+    transition-duration: 0.3s;
+    transition-property: transform filter;
+    transition-timing-function: ease-out;
+}
+
+.modal-add-points .modal-body .cards-container .add-points-card button:hover{
+    transform: translateY(-4px);
+}
+
+.modal-add-points .modal-body .cards-container .add-points-card img{
+    padding-bottom:25px;
+}
+
+.modal-add-points .modal-body .cards-container .add-points-card .details h3{
+    padding-bottom:15px;
+}
+
+
+
+

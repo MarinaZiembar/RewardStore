@@ -8,6 +8,7 @@ export const apiError = bool => (
         error: bool
     }
 )
+
   
 export const apiLoading = bool => (
     {
@@ -22,6 +23,8 @@ export const apiSuccess = products => (
         products
     }
 )
+
+
 
 export const selectedRoute = id => (
     {
@@ -52,8 +55,26 @@ export const redeemProductSuccess = timeStamp =>(
         redeemed:timeStamp
     }
 )
+export const redeemProductError = bool => (
+    {
+        type: 'REDEEM_ERROR',
+        error: bool
+    }
+)
 
+export const currentCategory = category =>(
+    {
+        type:'GET_CATEGORY',
+        category
+    }
+)
 
+export const currentOrder = order =>(
+    {
+        type:'GET_ORDER',
+        order
+    }
+)
 
 
 
@@ -110,7 +131,7 @@ export const getUserHistory = () => {
         })
         .then((response) => response.json())
 
-        .then((redeemedProducts) => dispatch(apiSuccess(redeemedProducts)))
+        .then((redeemedProducts) => dispatch(apiSuccess(redeemedProducts.reverse())))
 
         .catch((error) => {
             dispatch(apiError(true));
@@ -186,11 +207,11 @@ export const addPoints = (points) => {
 export const redeemProduct = (id) => {
     return dispatch => {
 
-        dispatch(apiError(false))
+        dispatch(redeemProductError(false))
 
         dispatch(apiLoading(true))
 
-        fetch(`${apiUrl}/redeem`, {
+        fetch(`${apiUrl}/redeemt`, {
             headers:headers,
             method:"post",
             body:JSON.stringify({productId:id}),
@@ -207,10 +228,25 @@ export const redeemProduct = (id) => {
         })
         .then((response) => response.body)
         .catch((error) => {
-            dispatch(apiError(true));
+            dispatch(redeemProductError(true));
         } )
     }
 }
+
+export const getCategory = (category) => {
+    return dispatch => {
+
+        dispatch(currentCategory(category))
+    }
+}
+
+export const getOrder = (order) => {
+    return dispatch => {
+
+        dispatch(currentOrder(order))
+    }
+}
+
 
 
 

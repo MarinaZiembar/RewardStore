@@ -7,6 +7,10 @@ const mapStateToProps = (state, ownProps) => ({
     products: state.products,
     routeId: state.routeId,
     userData: state.userData,
+    category: state.category,
+    order: state.order,
+    redeemSuccess:state.redeemProduct,
+    redeemError:state.redeemProductError
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
