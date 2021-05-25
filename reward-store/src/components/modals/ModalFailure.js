@@ -6,16 +6,16 @@ import  kraken from '../../assets/images/kraken.svg';
 
 function ModalFailure(props) {
 
-    const { show, handleHide } = props
+    const { showModal, handleHide } = props
 
     return(
-        <div className="modal-success">
             <Modal 
-                show={show} 
+                show={showModal} 
                 onHide={handleHide}
+                dialogClassName="modal-failure"
             >
                 <Modal.Body>
-                    <img src={kraken} alt="kraken" />
+                    <img src={kraken} width="140" alt="kraken" />
                     <h2>Shiver Me Timbers!</h2>
                     <p>There's been an error while trying to redeem your product.</p>
                     <p>Maybe try again later, lad!</p>
@@ -26,7 +26,6 @@ function ModalFailure(props) {
                     </button>
                 </Modal.Body>
             </Modal>
-        </div>
     )
 }
 

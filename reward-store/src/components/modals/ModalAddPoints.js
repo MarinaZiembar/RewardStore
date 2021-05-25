@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import { addPoints } from '../../utils/AddPoints';
+import { addPoints } from '../../utils/AddPointsData';
 import AddPointsCard from '../cards/AddPointsCard';
 
 
@@ -11,11 +11,11 @@ function ModalAddPoints(props) {
     const { handleOnShow, show, handleOnCardClick } = props
 
     return(
-        <div className="modal-add-points">
             <Modal 
                 show={show} 
                 onHide={handleOnShow}
                 size="lg"
+                dialogClassName="modal-add-points"
             >
                 <Modal.Header closeButton>
                 </Modal.Header>
@@ -38,7 +38,6 @@ function ModalAddPoints(props) {
                     </div>
                 </Modal.Body>
             </Modal>
-        </div>
     )
 }
 

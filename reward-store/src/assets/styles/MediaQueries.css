@@ -1,0 +1,309 @@
+
+
+/* LARGE */ 
+
+@media (max-width:1400px) {
+
+    .home{
+        padding:25px;
+    }
+
+    .product-card{
+        width:30%;
+        margin: 14px 1.5%;
+        padding:25px;
+    }
+
+    .product-card img{
+        width:85% ;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .product-card p{
+        font-size:18px;
+    }
+
+    .product-card h3{
+        font-size:24px;
+    }
+
+}
+
+
+/* MEDIUM */ 
+
+@media (max-width:992px) {
+
+    .home{
+        padding:25px;
+    }
+
+    .product-card{
+        width:48%;
+        margin: 6px 1%;
+        padding:30px;
+    }
+
+    .product-card img{
+        width:85% ;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .product-card p{
+        font-size:18px;
+    }
+
+    .product-card h3{
+        font-size:24px;
+    }
+
+    .history-product-card{
+       padding:30px 20px; 
+    }
+
+    .history-product-card .product-pic{
+        width:200px;
+    }
+
+    .history-product-card h3{
+        font-size:26px; 
+    }
+
+    .modal-dialog.modal-add-points .modal-content{
+        margin:40px 5px;
+        max-width: 100%;
+    }
+
+    .modal-dialog.modal-add-points{
+        margin:0px;
+        width:98%;
+        max-width:unset;
+    }
+    .modal-add-points .modal-body .cards-container .add-points-card{
+        padding:20px;
+    }
+}
+
+
+/* SMALL */ 
+
+@media (max-width:576px) {
+
+    .App .bottom{
+        flex-direction:column-reverse;
+        height:95vh;
+    }
+
+    .App .up-button{
+        display:none !important;
+    }
+
+    .menu{
+        flex-direction:row;
+        width:100%;
+        height:130px;
+    }
+
+    .menu a{
+        padding:25px 30px;
+        margin-top:-48px;
+    }
+
+    .menu img{
+        padding:0px;
+    }
+
+    .header{
+        height:80px;
+    }
+
+    .header .top img[alt="logo"]{
+        width:150px;
+    }
+
+    .points-container h3{
+        display:none;
+    }
+
+    .points-container aside p{
+        font-size:16px;
+    }
+
+    .home, .profile{
+        padding:20px;
+        border-top-left-radius: 0px;
+    }
+
+    .home .hero-card, .profile .hero-card{
+        padding:45px 20px 20px 20px;
+    }
+
+    .home .hero-card h1, .profile .hero-card h1{
+        font-size:40px;
+    }
+
+    .home .products-list{
+        justify-content:center;
+        margin-top: 10px;
+    }
+
+    .filters{
+        flex-direction: column;
+        padding:20px 0px 10px 0px;
+    }
+
+    .filters .order-by{
+        margin-top:20px;
+    }
+
+    .filters .filter-by-category, .filters .order-by{
+        display:flex;
+        justify-content: space-between;
+        width:100%;
+    }
+
+    .filters select{
+        width:180px;
+    }
+
+    .product-card{
+        width:100%;
+        margin: 10px 0;
+        padding:20px;
+    }
+
+    .product-card img{
+        width:75% ;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .product-card p{
+        font-size:18px;
+    }
+
+    .product-card h3{
+        font-size:24px;
+    }
+
+    .user-data{
+        padding:0px 10px;
+        margin:40px 0px 20px 0px;
+    }
+
+    .user-data .user-card .img-user{
+        padding:25px;
+    }
+
+    .user-data .user-card .img-user img{
+        width:60px;
+    }
+
+    .user-data h1 {
+        font-size: 30px;
+    }
+
+    .user-data h2 {
+        font-size: 35px;
+        margin-top:45px;
+    }
+
+    .history-product-card{
+       padding:20px; 
+       margin:20px 0px;
+    }
+
+    .history-product-card .product-pic{
+        width:100px;
+    }
+
+    .history-product-card h3{
+        font-size:20px; 
+    }
+
+    .history-product-card p{
+        font-size:14px;
+        margin-bottom:0px;
+        margin-top:25px; 
+    }
+
+    .history-product-card .price{
+        padding:6px 12px;
+    }
+
+    .history-product-card .price h5{
+        font-size:16px;
+    }
+
+    .history-product-card .price img{
+        width:16px;
+    }
+
+    .modal-dialog.modal-add-points .modal-content{
+        margin:40px 5px;
+        max-width: 100%;
+    }
+
+    .modal-dialog.modal-add-points .modal-content h2{
+        font-size:26px;
+    }
+
+    .modal-dialog.modal-add-points{
+        margin:0px;
+        width:98%;
+        max-width:unset;
+    }
+    .modal-add-points .modal-body .cards-container{
+        flex-direction: column;
+        margin-top:25px;
+    }
+    .modal-add-points .modal-body .cards-container .add-points-card{
+        padding:15px 20px;
+        flex-direction: row;
+        height:auto;
+        justify-content: flex-start;
+        text-align:left;
+    }
+
+    .modal-add-points .modal-body .cards-container .add-points-card .details{
+        height:auto;
+    }
+
+    .modal-add-points .modal-body .cards-container .add-points-card img{
+        width:60px;
+        margin-right:20px;
+        padding-bottom:0px;
+    }
+
+    .modal-add-points .modal-body .cards-container .add-points-card .details h3{
+       font-size:18px;
+       padding-bottom:10px;
+    }
+
+    .modal-add-points .modal-body .cards-container .add-points-card p{
+        font-size:14px;
+    }
+
+     .modal-add-points .modal-body .cards-container .add-points-card button{
+        font-size:14px;
+    }
+
+    .modal{
+        padding-left:0px !important;
+    }
+
+    .modal-failure, .modal-success{
+        height:100%;
+        margin-top:45%;
+    }
+
+    .modal-failure .modal-body, .modal-success .modal-body{
+        padding:20px !important;
+    }
+    
+    .modal-failure .modal-body p, .modal-success .modal-body p{
+        width:90%;
+    }
+}

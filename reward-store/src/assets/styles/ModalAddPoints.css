@@ -1,9 +1,10 @@
 .modal-add-points .modal-content{
     border-radius:20px;
     border:0px;
+    padding: 15px;
 }
 
-.modal-add-points .modal-header{
+.modal-header{
     border:0px;
 }
 
@@ -12,6 +13,7 @@
     justify-content:center;
     align-items:center;
     flex-direction:column;
+    text-align:center;
 }
 
 .modal-add-points .modal-body .cards-container{

@@ -19,6 +19,26 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
 }
 
+.App{
+    position:relative;
+}
+
+.App .up-button{
+    position:fixed;
+    z-index: 30;
+    bottom:35px;
+    right:35px;
+    background: #5e60ce;
+    color:white;
+    width:70px;
+    height:70px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 150px;
+    font-size: 26px;
+}
+
 
 @import url('./Menu.css');
 @import url('./Header.css');
@@ -28,3 +48,5 @@ h1,h2,h3,h4,h5,h6{
 @import url('./ModalFailure.css');
 @import url('./MyProfile.css');
 @import url('./Filters.css');
+@import url('./Paginator.css');
+@import url('./MediaQueries.css');

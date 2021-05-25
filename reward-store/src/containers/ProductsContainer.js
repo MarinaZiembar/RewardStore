@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProductsList from '../components/ProductsList';
-import { getProducts, getUserHistory, getUserData, redeemProduct } from '../actions/index';
+import { getProducts, getUserHistory, getUserData, redeemProduct, setShowSuccess, setShowFailure } from '../actions/index';
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -9,15 +9,17 @@ const mapStateToProps = (state, ownProps) => ({
     userData: state.userData,
     category: state.category,
     order: state.order,
-    redeemSuccess:state.redeemProduct,
-    redeemError:state.redeemProductError
+    showSuccessModal:state.showSuccessModal,
+    showFailureModal:state.showFailureModal
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onGetProducts: () => dispatch(getProducts()),
     onGetUserHistory: () => dispatch(getUserHistory()),
     onGetUserData: () => dispatch(getUserData()),
-    onRedeemProduct: (id) => dispatch(redeemProduct(id))
+    onRedeemProduct: (id) => dispatch(redeemProduct(id)),
+    onSetShowSuccess: (bool) => dispatch(setShowSuccess(bool)),
+    onSetShowFailure: (bool) => dispatch(setShowFailure(bool)),
   })
 
 export default connect(

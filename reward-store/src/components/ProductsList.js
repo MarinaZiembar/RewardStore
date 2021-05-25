@@ -3,27 +3,27 @@ import ProductCard from './cards/ProductCard';
 import HistoryProductCard from './cards/HistoryProductCard';
 import ModalSuccess from './modals/ModalSuccess';
 import ModalFailure from './modals/ModalFailure';
+import usePagination from "../utils/Pagination";
+import { Pagination } from "@material-ui/lab";
 import { getDateTime } from '../utils/Date';
 
 
 
-function ProductsList( { onGetProducts, onGetUserHistory, products, routeId, userData, onRedeemProduct, category, order, redeemSuccess, redeemError } ) {
+function ProductsList( { onGetProducts, onGetUserHistory, products, routeId, userData, onRedeemProduct, category, order, showSuccessModal, showFailureModal, onSetShowFailure, onSetShowSuccess} ) {
+
 
     useEffect(() => {
 
         routeId === 1 ? onGetProducts() : onGetUserHistory();
 
+        _DATA.setCurrentPage(1);
+
     }, [routeId, category])
 
 
-    const [showSuccess, setShowSuccess] = useState(false);
-    const [showFailure, setShowFailure] = useState(false);
 
-    
     const handleRedeemProduct = (value) => {
         onRedeemProduct(value);
-        redeemSuccess && setShowSuccess(true);
-        redeemError && setShowFailure(true);
     }
 
 
@@ -33,12 +33,25 @@ function ProductsList( { onGetProducts, onGetUserHistory, products, routeId, use
                                 order === "higher-price" ? filteredProducts.sort((a,b) => (b.cost - a.cost)) :
                                 filteredProducts;
 
+
     
+
+    let [page, setPage] = useState(1);
+
+    const itemsPerPage = 16;
+
+    const count = Math.ceil(finalProductsList.length / itemsPerPage);
+    let _DATA = usePagination(finalProductsList, itemsPerPage);
+
+    let handleChange = (e, p) => {
+        setPage(p);
+        _DATA.jump(p);
+    };                            
 
     return(
         <div className="products-list">
             { routeId === 1 ?
-                finalProductsList.map((product,i) => (
+                _DATA.currentData().map((product,i) => (
                     <ProductCard
                         id={product._id}
                         routeId={routeId}
@@ -60,13 +73,24 @@ function ProductsList( { onGetProducts, onGetUserHistory, products, routeId, use
                     />    
                 ))
             }
+
+            <Pagination
+                count={count}
+                size="large"
+                page={page}
+                variant="outlined"
+                shape="rounded"
+                onChange={handleChange}
+            />
+
+
             <ModalSuccess
-                show={showSuccess}
-                handleHide={() => setShowSuccess(false)}
+                showModal={showSuccessModal}
+                handleHide={() => onSetShowSuccess(false)}
             />
             <ModalFailure
-                show={showFailure} 
-                handleHide={() => setShowFailure(false)}
+                showModal={showFailureModal} 
+                handleHide={() => onSetShowFailure(false)}
             />
         </div>
     )

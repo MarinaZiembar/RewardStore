@@ -56,7 +56,7 @@ const addPoints = (state = new Date(), action) => {
   }
 }
 
-const redeemProduct = (state = new Date(), action) => {
+const redeemProduct = (state = false, action) => {
   switch (action.type) {
     case 'REDEEM_PRODUCT':
       return action.redeemed
@@ -65,10 +65,19 @@ const redeemProduct = (state = new Date(), action) => {
   }
 }
 
-const redeemProductError = (state = false, action) => {
+const showSuccessModal = (state = false, action) => {
   switch (action.type) {
-    case 'REDEEM_ERROR':
-      return action.error
+    case 'SHOW_SUCCESS_MODAL':
+      return action.showSuccess
+    default:
+      return state
+  }
+}
+
+const showFailureModal = (state = false, action) => {
+  switch (action.type) {
+    case 'SHOW_FAILURE_MODAL':
+      return action.showFailure
     default:
       return state
   }
@@ -104,5 +113,6 @@ export default combineReducers({
   redeemProduct,
   category,
   order,
-  redeemProductError
+  showSuccessModal,
+  showFailureModal
 })

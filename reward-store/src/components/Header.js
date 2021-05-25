@@ -23,7 +23,7 @@ function Header( { onGetUserData, addedPoints, userData, redeemProduct, onAddPoi
                     <h3>Ahoy, {userData.name}!</h3>
                     <aside onClick={() => setShow(true)} >
                         <p> {userData.points} </p>
-                        <img src={gem} width="25" alt="logo" />
+                        <img src={gem} width="25" alt="coin" />
                     </aside>
                 </div>
             </div>

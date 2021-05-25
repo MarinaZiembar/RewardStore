@@ -1,0 +1,52 @@
+.modal-failure .modal-content{
+    border-radius:20px;
+    border:0px;
+}
+
+.modal-failure .modal-body{
+    padding:0px;
+}
+
+.modal-failure .modal-body{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    border-radius:20px;
+    padding:35px;
+    background: linear-gradient(45deg, rgba(116,0,184,1) 0%, rgba(105,48,195,1) 49%, rgba(94,96,206,1) 100%);
+}
+
+.modal-failure .modal-body img{
+    filter: invert(100%) sepia(1%) saturate(7498%) hue-rotate(276deg) brightness(100%) contrast(104%);
+}
+
+.modal-failure .modal-body h2{
+    color:white;
+    margin:20px 0px;
+}
+
+.modal-failure .modal-body p{
+    color:white;
+    margin:0px;
+    margin-top: 5px;
+    width:80%;
+}
+
+.modal-failure .modal-body button{
+    color:white;
+    font-weight: 700;
+    margin-top:35px;
+    padding:12px 30px;
+    border:0px;
+    border-radius:12px;
+    background:linear-gradient(90deg, rgba(78,168,222,1) 0%, rgba(100,223,223,1) 49%, rgba(128,255,219,1) 100%);   
+    transition-duration: 0.3s;
+    transition-property: transform filter;
+    transition-timing-function: ease-out;
+}
+
+.modal-failure .modal-body button:hover{
+    transform: translateY(-4px);
+}

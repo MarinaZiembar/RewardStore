@@ -49,18 +49,13 @@ export const addPointsSuccess = timeStamp =>(
     }
 )
 
-export const redeemProductSuccess = timeStamp =>(
+export const redeemProductSuccess = bool =>(
     {
         type:'REDEEM_PRODUCT',
-        redeemed:timeStamp
+        redeemed:bool
     }
 )
-export const redeemProductError = bool => (
-    {
-        type: 'REDEEM_ERROR',
-        error: bool
-    }
-)
+
 
 export const currentCategory = category =>(
     {
@@ -73,6 +68,20 @@ export const currentOrder = order =>(
     {
         type:'GET_ORDER',
         order
+    }
+)
+
+export const setShowSuccessModal = bool =>(
+    {
+        type:'SHOW_SUCCESS_MODAL',
+        showSuccess:bool
+    }
+)
+
+export const setShowFailureModal = bool =>(
+    {
+        type:'SHOW_FAILURE_MODAL',
+        showFailure:bool
     }
 )
 
@@ -193,11 +202,11 @@ export const addPoints = (points) => {
             }
 
             dispatch(apiLoading(false))
-            dispatch(addPointsSuccess(new Date()))
 
             return response
         })
         .then((response) => response.body)
+        .then(() => dispatch(addPointsSuccess(new Date())))
         .catch((error) => {
             dispatch(apiError(true));
         } )
@@ -207,11 +216,11 @@ export const addPoints = (points) => {
 export const redeemProduct = (id) => {
     return dispatch => {
 
-        dispatch(redeemProductError(false))
+        dispatch(redeemProductSuccess(false))
 
         dispatch(apiLoading(true))
 
-        fetch(`${apiUrl}/redeemt`, {
+        fetch(`${apiUrl}/redeem`, {
             headers:headers,
             method:"post",
             body:JSON.stringify({productId:id}),
@@ -222,14 +231,15 @@ export const redeemProduct = (id) => {
             }
 
             dispatch(apiLoading(false))
-            dispatch(redeemProductSuccess(new Date()))
 
             return response
         })
         .then((response) => response.body)
-        .catch((error) => {
-            dispatch(redeemProductError(true));
-        } )
+        .then(() => {
+            dispatch(setShowSuccessModal(true));
+            dispatch(redeemProductSuccess(true));
+        })
+        .catch(() => dispatch(setShowFailureModal(true)))
     }
 }
 
@@ -244,6 +254,20 @@ export const getOrder = (order) => {
     return dispatch => {
 
         dispatch(currentOrder(order))
+    }
+}
+
+export const setShowFailure = (bool) => {
+    return dispatch => {
+
+        dispatch(setShowFailureModal(bool))
+    }
+}
+
+export const setShowSuccess = (bool) => {
+    return dispatch => {
+
+        dispatch(setShowSuccessModal(bool))
     }
 }
 

@@ -1,0 +1,22 @@
+
+
+.MuiPagination-root{
+    width:100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top:20px;
+    padding-bottom:50px;
+}
+
+.MuiPagination-root button{
+    border:0px;
+    border-radius:100px;
+}
+
+.Mui-selected{
+    background-color:#7400b8 !important;
+    color:white !important;
+    font-weight:700;
+}
+

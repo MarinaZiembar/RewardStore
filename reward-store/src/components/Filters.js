@@ -11,20 +11,28 @@ function Filters({ products, onGetCategory, onGetOrder }) {
     ]
 
 
+
     return(
         <div className="filters">
             <div className="filter-by-category">
-                <img src={filter} width="25" alt="filter" />
-                <p>Filter</p>
+                <div className="filter-icon">
+                    <img src={filter} width="25" alt="filter" />
+                    <p>Filter</p>
+                </div>
                 <select
-                    onChange={(e) => onGetCategory(e.target.value)}
+                    onChange={(e) => {
+                        onGetCategory(e.target.value);
+                    }}
                 >
                     <option value="">
                         All products
                     </option>
                     {
                         categories.map((category,i) => (
-                            <option value={category}>
+                            <option 
+                                value={category}
+                                key={i}
+                            >
                                 {category}
                             </option>
                         ))
@@ -32,8 +40,10 @@ function Filters({ products, onGetCategory, onGetOrder }) {
                 </select>
             </div>
             <div className="order-by">
-                <img src={order} width="20" alt="order" />
-                <p>Order by</p>
+                <div className="filter-icon">
+                    <img src={order} width="20" alt="order" />
+                    <p>Order by</p>
+                </div>
                 <select
                     onChange={(e) => onGetOrder(e.target.value)}
                 >
