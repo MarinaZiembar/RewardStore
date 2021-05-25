@@ -7,7 +7,7 @@ import user from '../assets/images/user.svg';
 export const routes = [
     {
         page_id:1,
-        path: '/',
+        path: '/home',
         component: Home,
         label:home,
     },
