@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/rewardstore/static/css/main.53e581b7.chunk.css",
+    "main.js": "/rewardstore/static/js/main.d49fada4.chunk.js",
+    "main.js.map": "/rewardstore/static/js/main.d49fada4.chunk.js.map",
+    "runtime-main.js": "/rewardstore/static/js/runtime-main.769a3963.js",
+    "runtime-main.js.map": "/rewardstore/static/js/runtime-main.769a3963.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/rewardstore/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.5fa7dcdf.chunk.js": "/rewardstore/static/js/2.5fa7dcdf.chunk.js",
+    "static/js/2.5fa7dcdf.chunk.js.map": "/rewardstore/static/js/2.5fa7dcdf.chunk.js.map",
+    "index.html": "/rewardstore/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/rewardstore/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.53e581b7.chunk.css.map": "/rewardstore/static/css/main.53e581b7.chunk.css.map",
+    "static/js/2.5fa7dcdf.chunk.js.LICENSE.txt": "/rewardstore/static/js/2.5fa7dcdf.chunk.js.LICENSE.txt",
+    "static/media/coin.d31cb904.svg": "/rewardstore/static/media/coin.d31cb904.svg",
+    "static/media/coins.c8ebb511.svg": "/rewardstore/static/media/coins.c8ebb511.svg",
+    "static/media/filter.db78b89f.svg": "/rewardstore/static/media/filter.db78b89f.svg",
+    "static/media/gem.e5ea73f0.svg": "/rewardstore/static/media/gem.e5ea73f0.svg",
+    "static/media/home.205e5c86.svg": "/rewardstore/static/media/home.205e5c86.svg",
+    "static/media/kraken.b2fd91a9.svg": "/rewardstore/static/media/kraken.b2fd91a9.svg",
+    "static/media/logo.78256b46.svg": "/rewardstore/static/media/logo.78256b46.svg",
+    "static/media/order.6a125d44.svg": "/rewardstore/static/media/order.6a125d44.svg",
+    "static/media/ship.81d06dc8.svg": "/rewardstore/static/media/ship.81d06dc8.svg",
+    "static/media/treasure.eededbbf.svg": "/rewardstore/static/media/treasure.eededbbf.svg",
+    "static/media/user.78b64d9f.svg": "/rewardstore/static/media/user.78b64d9f.svg",
+    "static/media/whiteCoin.86097fa2.svg": "/rewardstore/static/media/whiteCoin.86097fa2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.769a3963.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.5fa7dcdf.chunk.js",
+    "static/css/main.53e581b7.chunk.css",
+    "static/js/main.d49fada4.chunk.js"
+  ]
+}
